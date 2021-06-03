@@ -1,0 +1,10 @@
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\bin\Debug\CadastroCliente.exe.config
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\bin\Debug\CadastroCliente.exe
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\bin\Debug\CadastroCliente.pdb
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.csproj.AssemblyReference.cache
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.Properties.Resources.resources
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.csproj.GenerateResource.cache
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.csproj.CoreCompileInputs.cache
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.exe
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.pdb
+C:\Users\lidia.k.kobayashi\source\repos\CadastroCliente\CadastroCliente\obj\Debug\CadastroCliente.Frm_CadastroCliente.resources
