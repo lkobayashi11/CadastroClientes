@@ -31,22 +31,22 @@ namespace CadastroCliente
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroCliente));
-            this.txt_numero_cli = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_cep_cli = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_telefone_cli = new System.Windows.Forms.MaskedTextBox();
-            this.txt_uf_cli = new System.Windows.Forms.TextBox();
-            this.txt_cidade_cli = new System.Windows.Forms.TextBox();
-            this.txt_bairro_cli = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_endereco_cli = new System.Windows.Forms.TextBox();
-            this.txt_nome_cli = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_endereco_cli = new System.Windows.Forms.Label();
-            this.lbl_nome_cli = new System.Windows.Forms.Label();
+            this.txt_numeroCli = new System.Windows.Forms.TextBox();
+            this.lblNumeroCli = new System.Windows.Forms.Label();
+            this.txt_cepCli = new System.Windows.Forms.MaskedTextBox();
+            this.lblCepCli = new System.Windows.Forms.Label();
+            this.txt_telefoneCli = new System.Windows.Forms.MaskedTextBox();
+            this.txt_ufCli = new System.Windows.Forms.TextBox();
+            this.txt_cidadeCli = new System.Windows.Forms.TextBox();
+            this.txt_bairroCli = new System.Windows.Forms.TextBox();
+            this.lblUFCli = new System.Windows.Forms.Label();
+            this.lblCidadeCli = new System.Windows.Forms.Label();
+            this.lblBairroCli = new System.Windows.Forms.Label();
+            this.txt_enderecoCli = new System.Windows.Forms.TextBox();
+            this.txt_nomeCli = new System.Windows.Forms.TextBox();
+            this.lblTelefoneCli = new System.Windows.Forms.Label();
+            this.lblEnderecoCli = new System.Windows.Forms.Label();
+            this.lblNomeCli = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,189 +55,207 @@ namespace CadastroCliente
             this.bairroCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadeCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uFCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cEPCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEPCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_DPSPDataSet = new CadastroCliente.db_DPSPDataSet();
-            this.tb_clienteTableAdapter = new CadastroCliente.db_DPSPDataSetTableAdapters.tb_clienteTableAdapter();
             this.btn_findAll = new System.Windows.Forms.Button();
             this.btn_busca = new System.Windows.Forms.Button();
-            this.txt_buscanome = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txt_buscaNome = new System.Windows.Forms.TextBox();
             this.Consulta = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_campo = new System.Windows.Forms.ComboBox();
+            this.pnlInformacoes = new System.Windows.Forms.Panel();
+            this.cmb_ufCli = new System.Windows.Forms.ComboBox();
+            this.tbUFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_DPSPDataSet11 = new CadastroCliente.db_DPSPDataSet1();
+            this.txt_idCli = new System.Windows.Forms.TextBox();
+            this.lblIdCli = new System.Windows.Forms.Label();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_deletar = new System.Windows.Forms.Button();
             this.btn_inserir = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_id_cli = new System.Windows.Forms.TextBox();
+            this.lblInformacoes = new System.Windows.Forms.Label();
+            this.lblConsulta = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.btn_sair = new System.Windows.Forms.Button();
+            this.tb_clienteTableAdapter = new CadastroCliente.db_DPSPDataSetTableAdapters.tb_clienteTableAdapter();
+            this.db_DPSPDataSet1 = new CadastroCliente.db_DPSPDataSet();
+            this.dbDPSPDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbclienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDPSPDataSet1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbclienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbclienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_UFTableAdapter = new CadastroCliente.db_DPSPDataSet1TableAdapters.tb_UFTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet)).BeginInit();
             this.Consulta.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlInformacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbUFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDPSPDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDPSPDataSet1BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_numero_cli
+            // txt_numeroCli
             // 
-            this.txt_numero_cli.Location = new System.Drawing.Point(793, 102);
-            this.txt_numero_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_numero_cli.Name = "txt_numero_cli";
-            this.txt_numero_cli.Size = new System.Drawing.Size(55, 24);
-            this.txt_numero_cli.TabIndex = 17;
+            this.txt_numeroCli.Location = new System.Drawing.Point(793, 102);
+            this.txt_numeroCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_numeroCli.Name = "txt_numeroCli";
+            this.txt_numeroCli.Size = new System.Drawing.Size(55, 24);
+            this.txt_numeroCli.TabIndex = 17;
             // 
-            // label2
+            // lblNumeroCli
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(721, 105);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 18);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Número";
+            this.lblNumeroCli.AutoSize = true;
+            this.lblNumeroCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroCli.Location = new System.Drawing.Point(721, 105);
+            this.lblNumeroCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumeroCli.Name = "lblNumeroCli";
+            this.lblNumeroCli.Size = new System.Drawing.Size(62, 18);
+            this.lblNumeroCli.TabIndex = 16;
+            this.lblNumeroCli.Text = "Número";
             // 
-            // txt_cep_cli
+            // txt_cepCli
             // 
-            this.txt_cep_cli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cep_cli.Location = new System.Drawing.Point(158, 178);
-            this.txt_cep_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_cep_cli.Mask = "00000-000";
-            this.txt_cep_cli.Name = "txt_cep_cli";
-            this.txt_cep_cli.Size = new System.Drawing.Size(130, 24);
-            this.txt_cep_cli.TabIndex = 15;
+            this.txt_cepCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cepCli.Location = new System.Drawing.Point(158, 178);
+            this.txt_cepCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_cepCli.Mask = "00000-000";
+            this.txt_cepCli.Name = "txt_cepCli";
+            this.txt_cepCli.Size = new System.Drawing.Size(130, 24);
+            this.txt_cepCli.TabIndex = 15;
             // 
-            // label1
+            // lblCepCli
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 184);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 18);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "CEP";
+            this.lblCepCli.AutoSize = true;
+            this.lblCepCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCepCli.Location = new System.Drawing.Point(40, 184);
+            this.lblCepCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCepCli.Name = "lblCepCli";
+            this.lblCepCli.Size = new System.Drawing.Size(39, 18);
+            this.lblCepCli.TabIndex = 14;
+            this.lblCepCli.Text = "CEP";
             // 
-            // txt_telefone_cli
+            // txt_telefoneCli
             // 
-            this.txt_telefone_cli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefone_cli.Location = new System.Drawing.Point(158, 217);
-            this.txt_telefone_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_telefone_cli.Mask = "(00)00000-0000";
-            this.txt_telefone_cli.Name = "txt_telefone_cli";
-            this.txt_telefone_cli.Size = new System.Drawing.Size(130, 24);
-            this.txt_telefone_cli.TabIndex = 13;
+            this.txt_telefoneCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefoneCli.Location = new System.Drawing.Point(158, 217);
+            this.txt_telefoneCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_telefoneCli.Mask = "(00)00000-0000";
+            this.txt_telefoneCli.Name = "txt_telefoneCli";
+            this.txt_telefoneCli.Size = new System.Drawing.Size(130, 24);
+            this.txt_telefoneCli.TabIndex = 13;
             // 
-            // txt_uf_cli
+            // txt_ufCli
             // 
-            this.txt_uf_cli.Location = new System.Drawing.Point(793, 141);
-            this.txt_uf_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_uf_cli.Name = "txt_uf_cli";
-            this.txt_uf_cli.Size = new System.Drawing.Size(40, 24);
-            this.txt_uf_cli.TabIndex = 11;
+            this.txt_ufCli.Location = new System.Drawing.Point(793, 141);
+            this.txt_ufCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ufCli.Name = "txt_ufCli";
+            this.txt_ufCli.Size = new System.Drawing.Size(40, 24);
+            this.txt_ufCli.TabIndex = 11;
             // 
-            // txt_cidade_cli
+            // txt_cidadeCli
             // 
-            this.txt_cidade_cli.Location = new System.Drawing.Point(450, 141);
-            this.txt_cidade_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_cidade_cli.Name = "txt_cidade_cli";
-            this.txt_cidade_cli.Size = new System.Drawing.Size(261, 24);
-            this.txt_cidade_cli.TabIndex = 10;
+            this.txt_cidadeCli.Location = new System.Drawing.Point(450, 141);
+            this.txt_cidadeCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_cidadeCli.Name = "txt_cidadeCli";
+            this.txt_cidadeCli.Size = new System.Drawing.Size(261, 24);
+            this.txt_cidadeCli.TabIndex = 10;
             // 
-            // txt_bairro_cli
+            // txt_bairroCli
             // 
-            this.txt_bairro_cli.Location = new System.Drawing.Point(158, 141);
-            this.txt_bairro_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_bairro_cli.Name = "txt_bairro_cli";
-            this.txt_bairro_cli.Size = new System.Drawing.Size(207, 24);
-            this.txt_bairro_cli.TabIndex = 9;
+            this.txt_bairroCli.Location = new System.Drawing.Point(158, 141);
+            this.txt_bairroCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_bairroCli.Name = "txt_bairroCli";
+            this.txt_bairroCli.Size = new System.Drawing.Size(207, 24);
+            this.txt_bairroCli.TabIndex = 9;
             // 
-            // label6
+            // lblUFCli
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(725, 146);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 18);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "UF";
+            this.lblUFCli.AutoSize = true;
+            this.lblUFCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUFCli.Location = new System.Drawing.Point(725, 146);
+            this.lblUFCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUFCli.Name = "lblUFCli";
+            this.lblUFCli.Size = new System.Drawing.Size(28, 18);
+            this.lblUFCli.TabIndex = 8;
+            this.lblUFCli.Text = "UF";
             // 
-            // label5
+            // lblCidadeCli
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(389, 146);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 18);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Cidade";
+            this.lblCidadeCli.AutoSize = true;
+            this.lblCidadeCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCidadeCli.Location = new System.Drawing.Point(389, 146);
+            this.lblCidadeCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCidadeCli.Name = "lblCidadeCli";
+            this.lblCidadeCli.Size = new System.Drawing.Size(54, 18);
+            this.lblCidadeCli.TabIndex = 7;
+            this.lblCidadeCli.Text = "Cidade";
             // 
-            // label4
+            // lblBairroCli
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 146);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Bairro";
+            this.lblBairroCli.AutoSize = true;
+            this.lblBairroCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairroCli.Location = new System.Drawing.Point(40, 146);
+            this.lblBairroCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBairroCli.Name = "lblBairroCli";
+            this.lblBairroCli.Size = new System.Drawing.Size(48, 18);
+            this.lblBairroCli.TabIndex = 6;
+            this.lblBairroCli.Text = "Bairro";
             // 
-            // txt_endereco_cli
+            // txt_enderecoCli
             // 
-            this.txt_endereco_cli.Location = new System.Drawing.Point(158, 102);
-            this.txt_endereco_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_endereco_cli.Name = "txt_endereco_cli";
-            this.txt_endereco_cli.Size = new System.Drawing.Size(553, 24);
-            this.txt_endereco_cli.TabIndex = 4;
+            this.txt_enderecoCli.Location = new System.Drawing.Point(158, 102);
+            this.txt_enderecoCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_enderecoCli.Name = "txt_enderecoCli";
+            this.txt_enderecoCli.Size = new System.Drawing.Size(553, 24);
+            this.txt_enderecoCli.TabIndex = 4;
             // 
-            // txt_nome_cli
+            // txt_nomeCli
             // 
-            this.txt_nome_cli.Location = new System.Drawing.Point(158, 57);
-            this.txt_nome_cli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_nome_cli.Name = "txt_nome_cli";
-            this.txt_nome_cli.Size = new System.Drawing.Size(553, 24);
-            this.txt_nome_cli.TabIndex = 3;
+            this.txt_nomeCli.Location = new System.Drawing.Point(158, 57);
+            this.txt_nomeCli.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nomeCli.Name = "txt_nomeCli";
+            this.txt_nomeCli.Size = new System.Drawing.Size(553, 24);
+            this.txt_nomeCli.TabIndex = 3;
             // 
-            // label3
+            // lblTelefoneCli
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 221);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Telefone";
+            this.lblTelefoneCli.AutoSize = true;
+            this.lblTelefoneCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefoneCli.Location = new System.Drawing.Point(40, 221);
+            this.lblTelefoneCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTelefoneCli.Name = "lblTelefoneCli";
+            this.lblTelefoneCli.Size = new System.Drawing.Size(65, 18);
+            this.lblTelefoneCli.TabIndex = 2;
+            this.lblTelefoneCli.Text = "Telefone";
             // 
-            // lbl_endereco_cli
+            // lblEnderecoCli
             // 
-            this.lbl_endereco_cli.AutoSize = true;
-            this.lbl_endereco_cli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_endereco_cli.Location = new System.Drawing.Point(40, 105);
-            this.lbl_endereco_cli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_endereco_cli.Name = "lbl_endereco_cli";
-            this.lbl_endereco_cli.Size = new System.Drawing.Size(72, 18);
-            this.lbl_endereco_cli.TabIndex = 1;
-            this.lbl_endereco_cli.Text = "Endereço";
+            this.lblEnderecoCli.AutoSize = true;
+            this.lblEnderecoCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnderecoCli.Location = new System.Drawing.Point(40, 105);
+            this.lblEnderecoCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnderecoCli.Name = "lblEnderecoCli";
+            this.lblEnderecoCli.Size = new System.Drawing.Size(72, 18);
+            this.lblEnderecoCli.TabIndex = 1;
+            this.lblEnderecoCli.Text = "Endereço";
             // 
-            // lbl_nome_cli
+            // lblNomeCli
             // 
-            this.lbl_nome_cli.AutoSize = true;
-            this.lbl_nome_cli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_cli.Location = new System.Drawing.Point(40, 60);
-            this.lbl_nome_cli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_nome_cli.Name = "lbl_nome_cli";
-            this.lbl_nome_cli.Size = new System.Drawing.Size(49, 18);
-            this.lbl_nome_cli.TabIndex = 0;
-            this.lbl_nome_cli.Text = "Nome";
+            this.lblNomeCli.AutoSize = true;
+            this.lblNomeCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCli.Location = new System.Drawing.Point(40, 60);
+            this.lblNomeCli.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeCli.Name = "lblNomeCli";
+            this.lblNomeCli.Size = new System.Drawing.Size(49, 18);
+            this.lblNomeCli.TabIndex = 0;
+            this.lblNomeCli.Text = "Nome";
             // 
             // dataGridView1
             // 
@@ -254,7 +272,7 @@ namespace CadastroCliente
             this.bairroCLIDataGridViewTextBoxColumn,
             this.cidadeCLIDataGridViewTextBoxColumn,
             this.uFCliDataGridViewTextBoxColumn,
-            this.cEPCliDataGridViewTextBoxColumn,
+            this.CEPCliDataGridViewTextBoxColumn,
             this.telefoneCLIDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tbclienteBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(39, 535);
@@ -329,14 +347,14 @@ namespace CadastroCliente
             this.uFCliDataGridViewTextBoxColumn.ReadOnly = true;
             this.uFCliDataGridViewTextBoxColumn.Width = 125;
             // 
-            // cEPCliDataGridViewTextBoxColumn
+            // CEPCliDataGridViewTextBoxColumn
             // 
-            this.cEPCliDataGridViewTextBoxColumn.DataPropertyName = "CEP_Cli";
-            this.cEPCliDataGridViewTextBoxColumn.HeaderText = "CEP";
-            this.cEPCliDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cEPCliDataGridViewTextBoxColumn.Name = "cEPCliDataGridViewTextBoxColumn";
-            this.cEPCliDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cEPCliDataGridViewTextBoxColumn.Width = 125;
+            this.CEPCliDataGridViewTextBoxColumn.DataPropertyName = "CEP_Cli";
+            this.CEPCliDataGridViewTextBoxColumn.HeaderText = "CEP";
+            this.CEPCliDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.CEPCliDataGridViewTextBoxColumn.Name = "CEPCliDataGridViewTextBoxColumn";
+            this.CEPCliDataGridViewTextBoxColumn.ReadOnly = true;
+            this.CEPCliDataGridViewTextBoxColumn.Width = 125;
             // 
             // telefoneCLIDataGridViewTextBoxColumn
             // 
@@ -357,16 +375,12 @@ namespace CadastroCliente
             this.db_DPSPDataSet.DataSetName = "db_DPSPDataSet";
             this.db_DPSPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tb_clienteTableAdapter
-            // 
-            this.tb_clienteTableAdapter.ClearBeforeFill = true;
-            // 
             // btn_findAll
             // 
             this.btn_findAll.AllowDrop = true;
             this.btn_findAll.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_findAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_findAll.Location = new System.Drawing.Point(886, 44);
+            this.btn_findAll.Location = new System.Drawing.Point(886, 39);
             this.btn_findAll.Margin = new System.Windows.Forms.Padding(4);
             this.btn_findAll.Name = "btn_findAll";
             this.btn_findAll.Size = new System.Drawing.Size(100, 28);
@@ -379,7 +393,7 @@ namespace CadastroCliente
             // 
             this.btn_busca.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_busca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_busca.Location = new System.Drawing.Point(778, 44);
+            this.btn_busca.Location = new System.Drawing.Point(778, 39);
             this.btn_busca.Margin = new System.Windows.Forms.Padding(4);
             this.btn_busca.Name = "btn_busca";
             this.btn_busca.Size = new System.Drawing.Size(100, 28);
@@ -388,66 +402,124 @@ namespace CadastroCliente
             this.btn_busca.UseVisualStyleBackColor = false;
             this.btn_busca.Click += new System.EventHandler(this.btn_busca_Click);
             // 
-            // txt_buscanome
+            // txt_buscaNome
             // 
-            this.txt_buscanome.Location = new System.Drawing.Point(158, 41);
-            this.txt_buscanome.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_buscanome.Name = "txt_buscanome";
-            this.txt_buscanome.Size = new System.Drawing.Size(553, 22);
-            this.txt_buscanome.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 18);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Nome";
+            this.txt_buscaNome.Location = new System.Drawing.Point(158, 41);
+            this.txt_buscaNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_buscaNome.Name = "txt_buscaNome";
+            this.txt_buscaNome.Size = new System.Drawing.Size(553, 22);
+            this.txt_buscaNome.TabIndex = 1;
             // 
             // Consulta
             // 
             this.Consulta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Consulta.Controls.Add(this.cmb_campo);
             this.Consulta.Controls.Add(this.btn_findAll);
-            this.Consulta.Controls.Add(this.label7);
             this.Consulta.Controls.Add(this.btn_busca);
-            this.Consulta.Controls.Add(this.txt_buscanome);
+            this.Consulta.Controls.Add(this.txt_buscaNome);
             this.Consulta.Location = new System.Drawing.Point(39, 400);
             this.Consulta.Name = "Consulta";
             this.Consulta.Size = new System.Drawing.Size(1012, 100);
             this.Consulta.TabIndex = 3;
             // 
-            // panel1
+            // cmb_campo
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.txt_id_cli);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.btn_cancelar);
-            this.panel1.Controls.Add(this.btn_deletar);
-            this.panel1.Controls.Add(this.txt_numero_cli);
-            this.panel1.Controls.Add(this.lbl_nome_cli);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_nome_cli);
-            this.panel1.Controls.Add(this.txt_cep_cli);
-            this.panel1.Controls.Add(this.btn_inserir);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbl_endereco_cli);
-            this.panel1.Controls.Add(this.txt_telefone_cli);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txt_endereco_cli);
-            this.panel1.Controls.Add(this.txt_uf_cli);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txt_cidade_cli);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txt_bairro_cli);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(39, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1012, 298);
-            this.panel1.TabIndex = 5;
+            this.cmb_campo.FormattingEnabled = true;
+            this.cmb_campo.Items.AddRange(new object[] {
+            "Nome",
+            "Endereço",
+            "Bairro",
+            "Cidade",
+            "UF"});
+            this.cmb_campo.Location = new System.Drawing.Point(21, 41);
+            this.cmb_campo.Name = "cmb_campo";
+            this.cmb_campo.Size = new System.Drawing.Size(121, 24);
+            this.cmb_campo.TabIndex = 4;
+            this.cmb_campo.SelectedIndexChanged += new System.EventHandler(this.cmb_campo_SelectedIndexChanged);
+            // 
+            // pnlInformacoes
+            // 
+            this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlInformacoes.Controls.Add(this.cmb_ufCli);
+            this.pnlInformacoes.Controls.Add(this.txt_idCli);
+            this.pnlInformacoes.Controls.Add(this.lblIdCli);
+            this.pnlInformacoes.Controls.Add(this.btn_cancelar);
+            this.pnlInformacoes.Controls.Add(this.btn_deletar);
+            this.pnlInformacoes.Controls.Add(this.txt_numeroCli);
+            this.pnlInformacoes.Controls.Add(this.lblNomeCli);
+            this.pnlInformacoes.Controls.Add(this.lblNumeroCli);
+            this.pnlInformacoes.Controls.Add(this.txt_nomeCli);
+            this.pnlInformacoes.Controls.Add(this.txt_cepCli);
+            this.pnlInformacoes.Controls.Add(this.btn_inserir);
+            this.pnlInformacoes.Controls.Add(this.lblCepCli);
+            this.pnlInformacoes.Controls.Add(this.lblEnderecoCli);
+            this.pnlInformacoes.Controls.Add(this.txt_telefoneCli);
+            this.pnlInformacoes.Controls.Add(this.lblTelefoneCli);
+            this.pnlInformacoes.Controls.Add(this.txt_enderecoCli);
+            this.pnlInformacoes.Controls.Add(this.txt_ufCli);
+            this.pnlInformacoes.Controls.Add(this.lblBairroCli);
+            this.pnlInformacoes.Controls.Add(this.txt_cidadeCli);
+            this.pnlInformacoes.Controls.Add(this.lblCidadeCli);
+            this.pnlInformacoes.Controls.Add(this.txt_bairroCli);
+            this.pnlInformacoes.Controls.Add(this.lblUFCli);
+            this.pnlInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlInformacoes.Location = new System.Drawing.Point(39, 58);
+            this.pnlInformacoes.Name = "pnlInformacoes";
+            this.pnlInformacoes.Size = new System.Drawing.Size(1012, 298);
+            this.pnlInformacoes.TabIndex = 5;
+            // 
+            // cmb_ufCli
+            // 
+            this.cmb_ufCli.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbUFBindingSource, "Nome_UF", true));
+            this.cmb_ufCli.DataSource = this.tbUFBindingSource;
+            this.cmb_ufCli.DisplayMember = "ID_UF";
+            this.cmb_ufCli.FormattingEnabled = true;
+            this.cmb_ufCli.Location = new System.Drawing.Point(793, 184);
+            this.cmb_ufCli.Name = "cmb_ufCli";
+            this.cmb_ufCli.Size = new System.Drawing.Size(121, 26);
+            this.cmb_ufCli.TabIndex = 23;
+            this.cmb_ufCli.ValueMember = "ID_UF";
+            // 
+            // tbUFBindingSource
+            // 
+            this.tbUFBindingSource.DataMember = "tb_UF";
+            this.tbUFBindingSource.DataSource = this.db_DPSPDataSet11;
+            // 
+            // db_DPSPDataSet11
+            // 
+            this.db_DPSPDataSet11.DataSetName = "db_DPSPDataSet1";
+            this.db_DPSPDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txt_idCli
+            // 
+            this.txt_idCli.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txt_idCli.Enabled = false;
+            this.txt_idCli.Location = new System.Drawing.Point(158, 22);
+            this.txt_idCli.Name = "txt_idCli";
+            this.txt_idCli.Size = new System.Drawing.Size(90, 24);
+            this.txt_idCli.TabIndex = 22;
+            // 
+            // lblIdCli
+            // 
+            this.lblIdCli.AutoSize = true;
+            this.lblIdCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCli.Location = new System.Drawing.Point(40, 25);
+            this.lblIdCli.Name = "lblIdCli";
+            this.lblIdCli.Size = new System.Drawing.Size(19, 18);
+            this.lblIdCli.TabIndex = 21;
+            this.lblIdCli.Text = "Id";
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_cancelar.Location = new System.Drawing.Point(778, 245);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(100, 29);
+            this.btn_cancelar.TabIndex = 20;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_deletar
             // 
@@ -475,56 +547,25 @@ namespace CadastroCliente
             this.btn_inserir.UseVisualStyleBackColor = false;
             this.btn_inserir.Click += new System.EventHandler(this.btn_inserir_Click);
             // 
-            // label9
+            // lblInformacoes
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(58, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 20);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Informações";
+            this.lblInformacoes.AutoSize = true;
+            this.lblInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInformacoes.Location = new System.Drawing.Point(58, 48);
+            this.lblInformacoes.Name = "lblInformacoes";
+            this.lblInformacoes.Size = new System.Drawing.Size(112, 20);
+            this.lblInformacoes.TabIndex = 6;
+            this.lblInformacoes.Text = "Informações";
             // 
-            // label8
+            // lblConsulta
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(63, 392);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Consulta";
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_cancelar.Location = new System.Drawing.Point(778, 245);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(100, 29);
-            this.btn_cancelar.TabIndex = 20;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(40, 25);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 18);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Id";
-            // 
-            // txt_id_cli
-            // 
-            this.txt_id_cli.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txt_id_cli.Enabled = false;
-            this.txt_id_cli.Location = new System.Drawing.Point(158, 22);
-            this.txt_id_cli.Name = "txt_id_cli";
-            this.txt_id_cli.Size = new System.Drawing.Size(90, 24);
-            this.txt_id_cli.TabIndex = 22;
+            this.lblConsulta.AutoSize = true;
+            this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConsulta.Location = new System.Drawing.Point(63, 392);
+            this.lblConsulta.Name = "lblConsulta";
+            this.lblConsulta.Size = new System.Drawing.Size(83, 20);
+            this.lblConsulta.TabIndex = 7;
+            this.lblConsulta.Text = "Consulta";
             // 
             // logo
             // 
@@ -548,17 +589,55 @@ namespace CadastroCliente
             this.btn_sair.UseVisualStyleBackColor = false;
             this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
             // 
+            // tb_clienteTableAdapter
+            // 
+            this.tb_clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // db_DPSPDataSet1
+            // 
+            this.db_DPSPDataSet1.DataSetName = "db_DPSPDataSet";
+            this.db_DPSPDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbDPSPDataSet1BindingSource
+            // 
+            this.dbDPSPDataSet1BindingSource.DataSource = this.db_DPSPDataSet1;
+            this.dbDPSPDataSet1BindingSource.Position = 0;
+            // 
+            // tbclienteBindingSource1
+            // 
+            this.tbclienteBindingSource1.DataMember = "tb_cliente";
+            this.tbclienteBindingSource1.DataSource = this.dbDPSPDataSet1BindingSource;
+            // 
+            // dbDPSPDataSet1BindingSource1
+            // 
+            this.dbDPSPDataSet1BindingSource1.DataSource = this.db_DPSPDataSet1;
+            this.dbDPSPDataSet1BindingSource1.Position = 0;
+            // 
+            // tbclienteBindingSource2
+            // 
+            this.tbclienteBindingSource2.DataMember = "tb_cliente";
+            this.tbclienteBindingSource2.DataSource = this.dbDPSPDataSet1BindingSource1;
+            // 
+            // tbclienteBindingSource3
+            // 
+            this.tbclienteBindingSource3.DataMember = "tb_cliente";
+            this.tbclienteBindingSource3.DataSource = this.dbDPSPDataSet1BindingSource1;
+            // 
+            // tb_UFTableAdapter
+            // 
+            this.tb_UFTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1077, 766);
+            this.ClientSize = new System.Drawing.Size(1077, 774);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.logo);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblConsulta);
+            this.Controls.Add(this.lblInformacoes);
+            this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Consulta);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -570,38 +649,45 @@ namespace CadastroCliente
             ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet)).EndInit();
             this.Consulta.ResumeLayout(false);
             this.Consulta.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlInformacoes.ResumeLayout(false);
+            this.pnlInformacoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbUFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDPSPDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDPSPDataSet1BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MaskedTextBox txt_cep_cli;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txt_telefone_cli;
-        private System.Windows.Forms.TextBox txt_uf_cli;
-        private System.Windows.Forms.TextBox txt_cidade_cli;
-        private System.Windows.Forms.TextBox txt_bairro_cli;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_endereco_cli;
-        private System.Windows.Forms.TextBox txt_nome_cli;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_endereco_cli;
-        private System.Windows.Forms.Label lbl_nome_cli;
-        private System.Windows.Forms.TextBox txt_numero_cli;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txt_cepCli;
+        private System.Windows.Forms.Label lblCepCli;
+        private System.Windows.Forms.MaskedTextBox txt_telefoneCli;
+        private System.Windows.Forms.TextBox txt_ufCli;
+        private System.Windows.Forms.TextBox txt_cidadeCli;
+        private System.Windows.Forms.TextBox txt_bairroCli;
+        private System.Windows.Forms.Label lblUFCli;
+        private System.Windows.Forms.Label lblCidadeCli;
+        private System.Windows.Forms.Label lblBairroCli;
+        private System.Windows.Forms.TextBox txt_enderecoCli;
+        private System.Windows.Forms.TextBox txt_nomeCli;
+        private System.Windows.Forms.Label lblTelefoneCli;
+        private System.Windows.Forms.Label lblEnderecoCli;
+        private System.Windows.Forms.Label lblNomeCli;
+        private System.Windows.Forms.TextBox txt_numeroCli;
+        private System.Windows.Forms.Label lblNumeroCli;
         private System.Windows.Forms.DataGridView dataGridView1;
         private db_DPSPDataSet db_DPSPDataSet;
         private System.Windows.Forms.BindingSource tbclienteBindingSource;
         private db_DPSPDataSetTableAdapters.tb_clienteTableAdapter tb_clienteTableAdapter;
         private System.Windows.Forms.Button btn_busca;
-        private System.Windows.Forms.TextBox txt_buscanome;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_buscaNome;
         private System.Windows.Forms.Button btn_findAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDCLIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCLIDataGridViewTextBoxColumn;
@@ -610,19 +696,30 @@ namespace CadastroCliente
         private System.Windows.Forms.DataGridViewTextBoxColumn bairroCLIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidadeCLIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uFCliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cEPCliDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEPCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneCLIDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel Consulta;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlInformacoes;
         private System.Windows.Forms.Button btn_deletar;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblInformacoes;
         private System.Windows.Forms.Button btn_inserir;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblConsulta;
         private System.Windows.Forms.Button btn_cancelar;
-        private System.Windows.Forms.TextBox txt_id_cli;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_idCli;
+        private System.Windows.Forms.Label lblIdCli;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button btn_sair;
+        private System.Windows.Forms.ComboBox cmb_campo;
+        private System.Windows.Forms.BindingSource dbDPSPDataSet1BindingSource;
+        private db_DPSPDataSet db_DPSPDataSet1;
+        private System.Windows.Forms.BindingSource tbclienteBindingSource1;
+        private System.Windows.Forms.BindingSource dbDPSPDataSet1BindingSource1;
+        private System.Windows.Forms.BindingSource tbclienteBindingSource2;
+        private System.Windows.Forms.BindingSource tbclienteBindingSource3;
+        private System.Windows.Forms.ComboBox cmb_ufCli;
+        private db_DPSPDataSet1 db_DPSPDataSet11;
+        private System.Windows.Forms.BindingSource tbUFBindingSource;
+        private db_DPSPDataSet1TableAdapters.tb_UFTableAdapter tb_UFTableAdapter;
     }
 }
 
