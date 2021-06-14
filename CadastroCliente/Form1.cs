@@ -13,27 +13,48 @@ namespace CadastroCliente
 {
     public partial class Frm_CadastroCliente : Form
     {
+        public int X = 13, Y = 14, n = 0, id = 0;
+        public string ret_id;
         public Frm_CadastroCliente()
         {
             InitializeComponent();
             btn_deletar.Visible = false;
-            cmb_ufCli.Visible = false;
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            btnCanTel.Visible = false;
         }
 
         int _linhaIndice;
         bool _novo = true;
-
+        String _idCliente;
+              
         SqlConnection sqlConexao = null;
         private string strConexao = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=db_DPSP;Data Source=localhost\SQLEXPRESS01";
         private string strSql = string.Empty;
 
-        private void frmCadastroCliente_Load(object sender, EventArgs e)
-        {        
-           
+       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet.tb_cliente);
+            dataGridView2.Visible = false;
             btn_deletar.Visible = false;
+            
         }
 
-        
+        private void Criar_Telefone()
+        {
+                MaskedTextBox mt = new MaskedTextBox();
+                mt.Location = new System.Drawing.Point(X, Y);
+                mt.Mask = "(99)00000-0000";
+                mt.Name = "Telefone" + id; ;
+                mt.Size = new System.Drawing.Size(120, 24);
+               //mt.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+                panel1.Controls.Add(mt);
+                Y += 24;
+                id++;
+        }
+
         private void btn_inserir_Click(object sender, EventArgs e)
         {
 
@@ -50,21 +71,19 @@ namespace CadastroCliente
                 return;
             }
 
-            if (!txt_telefoneCli.MaskCompleted)
-            {
-                MessageBox.Show("Preencha o campo telefone corretamente.");
-                return;
+            if (id == 0 && _novo)
+              {
+                  MessageBox.Show("Preencha o campo telefone corretamente.");
+                  return;
             }
-
-            
+                        
             if (_novo) { 
-                strSql = "insert into tb_cliente (Nome_CLI, Endereco_CLI,Numero_CLI, Bairro_CLI, Cidade_CLI, UF_Cli," +
-                    "CEP_Cli,Telefone_CLI) values(@nome,@endereco,@numero,@bairro,@cidade,@UF,@CEP,@telefone)";
+                strSql = "INSERT INTO tb_cliente (Nome_CLI, Endereco_CLI,Numero_CLI, Bairro_CLI, Cidade_CLI, UF_Cli," +
+                    "CEP_Cli, Telefone_CLI) values(@nome,@endereco,@numero,@bairro,@cidade,@UF,@CEP,@telefone)";
 
                 sqlConexao = new SqlConnection(strConexao);
                 SqlCommand comando = new SqlCommand(strSql, sqlConexao);
-
-             
+                             
                 comando.Parameters.Add("@nome", SqlDbType.VarChar).Value = txt_nomeCli.Text;
                 comando.Parameters.Add("@endereco", SqlDbType.VarChar).Value = txt_enderecoCli.Text;
                 comando.Parameters.Add("@numero", SqlDbType.VarChar).Value = txt_numeroCli.Text;
@@ -72,13 +91,27 @@ namespace CadastroCliente
                 comando.Parameters.Add("@cidade", SqlDbType.VarChar).Value = txt_cidadeCli.Text;
                 comando.Parameters.Add("@UF", SqlDbType.VarChar).Value = txt_ufCli.Text;
                 comando.Parameters.Add("@CEP", SqlDbType.VarChar).Value = txt_cepCli.Text;
-                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = txt_telefoneCli.Text;
+                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = "999999999";
 
                 try
                 {
                     sqlConexao.Open();
 
                     comando.ExecuteNonQuery();
+
+                    strSql = "select ident_current ('tb_cliente')";
+                    comando = new SqlCommand(strSql, sqlConexao);
+
+                    ret_id = comando.ExecuteScalar().ToString();
+
+                    if (CadTelefone())
+                    {
+                     
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar telefone !");
+                    }
 
                     MessageBox.Show("Cliente criado com sucesso!");
                 }
@@ -89,13 +122,17 @@ namespace CadastroCliente
                 }
                 finally
                 {
-                    sqlConexao.Close();
+                    sqlConexao.Close();                                      
                 }
+                InicializaParams();
+                btnIncluiTel.Visible = true;
+                btnAtTel.Visible = false;
+                btnDelTel.Visible = false;
             }
             else
             {
-                strSql = "update tb_cliente set Nome_CLI=@nome, Endereco_CLI=@endereco, Numero_CLI=@numero, Bairro_CLI=@bairro," +
-                    " Cidade_CLI=@cidade,UF_Cli=@uf,CEP_Cli=@cep,Telefone_CLI=@telefone WHERE ID_Cli = @Id";
+                strSql = "UPDATE tb_cliente SET Nome_CLI=@nome, Endereco_CLI=@endereco, Numero_CLI=@numero, Bairro_CLI=@bairro," +
+                    " Cidade_CLI=@cidade,UF_Cli=@uf,CEP_Cli=@cep WHERE ID_Cli = @Id";
 
                 sqlConexao = new SqlConnection(strConexao);
                 SqlCommand comando = new SqlCommand(strSql, sqlConexao);
@@ -108,13 +145,23 @@ namespace CadastroCliente
                 comando.Parameters.Add("@cidade", SqlDbType.VarChar).Value = txt_cidadeCli.Text;
                 comando.Parameters.Add("@UF", SqlDbType.VarChar).Value = txt_ufCli.Text;
                 comando.Parameters.Add("@CEP", SqlDbType.VarChar).Value = txt_cepCli.Text;
-                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = txt_telefoneCli.Text;
-
+       
                 try
                 {
                     sqlConexao.Open();
 
                     comando.ExecuteNonQuery();
+
+                    ret_id = txt_idCli.Text;
+
+                    if (CadTelefone())
+                    {
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao cadastrar telefone !");
+                    }
 
                     MessageBox.Show("Cliente atualizado com sucesso!");
                 }
@@ -134,34 +181,22 @@ namespace CadastroCliente
             this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet.tb_cliente);
 
             btn_deletar.Visible = false;
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            InicializaParams();
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'db_DPSPDataSet11.tb_UF' table. You can move, or remove it, as needed.
-            this.tb_UFTableAdapter.Fill(this.db_DPSPDataSet11.tb_UF);
-            // TODO: This line of code loads data into the 'db_DPSPDataSet1.tb_cliente' table. You can move, or remove it, as needed.
-            this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet1.tb_cliente);
-            // TODO: This line of code loads data into the 'db_DPSPDataSet1.tb_cliente' table. You can move, or remove it, as needed.
-            this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet1.tb_cliente);
-            // TODO: This line of code loads data into the 'db_DPSPDataSet1.tb_cliente' table. You can move, or remove it, as needed.
-            this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet1.tb_cliente);
-
-            this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet.tb_cliente);
-
-        }
-
+           
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                      
+                   
              _linhaIndice = e.RowIndex;
 
             if (_linhaIndice == -1)
             {
                 return;
             }
-
             DataGridViewRow rowData = dataGridView1.Rows[_linhaIndice];
 
             txt_idCli.Text = rowData.Cells[0].Value.ToString();
@@ -172,11 +207,13 @@ namespace CadastroCliente
             txt_cidadeCli.Text = rowData.Cells[5].Value.ToString();
             txt_ufCli.Text = rowData.Cells[6].Value.ToString();
             txt_cepCli.Text = rowData.Cells[7].Value.ToString();
-            txt_telefoneCli.Text = rowData.Cells[8].Value.ToString();
-
+                        
+            dataGridView2.Visible = true;
+            this.tb_telefoneTableAdapter.FillByID(this.db_DPSPDataSet2.tb_telefone, Int16.Parse(txt_idCli.Text));
+            
             _novo = false;
             btn_deletar.Visible = true;
-
+            btnIncluiTel.Visible = true;
         }
             
         private void btn_busca_Click(object sender, EventArgs e)
@@ -213,13 +250,12 @@ namespace CadastroCliente
                 cmb_campo.ResetText();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFindAll_Click(object sender, EventArgs e)
         {
             txt_buscaNome.Clear();
             this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet.tb_cliente);
         }
-
-     
+             
         private void btn_deletar_Click(object sender, EventArgs e)
         {
 
@@ -227,7 +263,8 @@ namespace CadastroCliente
 
             if (result.Equals(DialogResult.OK))
             {
-                string strSql = "DELETE FROM tb_cliente WHERE ID_Cli = @Id";
+                string strSql = "DELETE FROM tb_telefone WHERE ID_Cli = @Id;" +
+                    "DELETE FROM tb_cliente WHERE ID_Cli = @Id";
 
                 sqlConexao = new SqlConnection(strConexao);
                 SqlCommand comando = new SqlCommand(strSql, sqlConexao);
@@ -237,9 +274,7 @@ namespace CadastroCliente
                 try
                 {
                     sqlConexao.Open();
-
                     comando.ExecuteNonQuery();
-
                     MessageBox.Show("Cliente deletado com sucesso!");
                 }
 
@@ -251,12 +286,10 @@ namespace CadastroCliente
                 {
                     sqlConexao.Close();
                 }
-
                 Clean_fields();
                 _novo = true;
 
                 this.tb_clienteTableAdapter.Fill(this.db_DPSPDataSet.tb_cliente);
-                
             } 
             else
             {
@@ -266,9 +299,14 @@ namespace CadastroCliente
             btn_deletar.Visible = false;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             Clean_fields();
+            InicializaParams();
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            btnCanTel.Visible = false;
             _novo = true;
         }
 
@@ -281,8 +319,180 @@ namespace CadastroCliente
             txt_cidadeCli.Clear();
             txt_ufCli.Clear();
             txt_cepCli.Clear();
-            txt_telefoneCli.Clear();
-            
+            dataGridView2.Visible = false;
+        }
+
+        private void btnIncluiTel_Click(object sender, EventArgs e)
+        {
+                Criar_Telefone();
+                ((MaskedTextBox)panel1.Controls["Telefone" + (id - 1)]).Focus();
+        }
+           
+        private void cmb_campo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_buscaNome.Clear();
+        }
+          
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnIncluiTel.Visible = false;
+            btnAtTel.Visible = true;
+            btnDelTel.Visible = true;
+            btnCanTel.Visible = true;
+
+            _linhaIndice = e.RowIndex;
+
+            if (_linhaIndice == -1)
+            {
+                return;
+            }
+            DataGridViewRow rowData = dataGridView2.Rows[_linhaIndice];
+
+            Criar_Telefone();
+            _idCliente = rowData.Cells[0].Value.ToString();
+            ((MaskedTextBox)panel1.Controls["Telefone" + (id - 1)]).Text = rowData.Cells[1].Value.ToString();
+
+        }
+
+        private void Gravar_Telefone()
+        {
+            strSql = "select ident_current (tb_cliente)";
+            sqlConexao = new SqlConnection(strConexao);
+            SqlCommand comando = new SqlCommand(strSql, sqlConexao);
+
+            ret_id = comando.ExecuteScalar().ToString();
+        }
+
+        private void btnAtTel_Click(object sender, EventArgs e)
+        {
+            if (AtualizaTelefone())
+            {
+                MessageBox.Show(" Telefone atualizado com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar o telefone !");
+                              
+            }
+
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            btnCanTel.Visible = false;
+            InicializaParams();
+        }
+
+        private void btnDelTel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Deseja deletar o telefone?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result.Equals(DialogResult.OK))
+            {
+                if (DeletaTelefone())
+                {
+                    MessageBox.Show(" Telefone deletado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao deletar o telefone !");
+                }
+
+            }
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            btnCanTel.Visible = false;
+            InicializaParams();
+
+        }
+
+        private bool CadTelefone()
+        {
+            n = panel1.Controls.Count;
+            for (int i = 0; i < n; i++) { 
+                strSql = "insert into [tb_telefone](ID_CLI, Telefone_CLI) values('" + ret_id + "', '" + ((MaskedTextBox)panel1.Controls["Telefone" +i]).Text+"')";
+                SqlCommand comando = new SqlCommand(strSql, sqlConexao);
+                if (((MaskedTextBox)panel1.Controls["Telefone"+i]).Text == "")
+                {
+                   
+                }
+               else
+                {
+                    comando.ExecuteNonQuery();                  
+                }
+            }
+            return true;
+        }
+ 
+        private bool AtualizaTelefone()
+        {
+            n = panel1.Controls.Count;
+            for (int i = 0; i < n; i++)
+            {
+                strSql = "UPDATE tb_telefone SET Telefone_CLI=@telefone WHERE ID_TEL = @Id";
+                sqlConexao = new SqlConnection(strConexao);
+                SqlCommand comando = new SqlCommand(strSql, sqlConexao);
+
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = _idCliente;
+                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = ((MaskedTextBox)panel1.Controls["Telefone" + i]).Text;
+             
+                if (((MaskedTextBox)panel1.Controls["Telefone" + i]).Text == "")
+                {
+
+                }
+                else
+                {
+                    sqlConexao.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            this.tb_telefoneTableAdapter.FillByID(this.db_DPSPDataSet2.tb_telefone, Int16.Parse(txt_idCli.Text));
+           
+            return true;
+        }
+
+        private bool DeletaTelefone()
+        {
+            n = panel1.Controls.Count;
+            for (int i = 0; i < n; i++)
+            {
+                strSql = "DELETE FROM tb_telefone WHERE ID_TEL = @Id";
+                sqlConexao = new SqlConnection(strConexao);
+                SqlCommand comando = new SqlCommand(strSql, sqlConexao);
+
+                comando.Parameters.Add("@id", SqlDbType.Int).Value = _idCliente;
+                comando.Parameters.Add("@telefone", SqlDbType.VarChar).Value = ((MaskedTextBox)panel1.Controls["Telefone" + i]).Text;
+
+                if (((MaskedTextBox)panel1.Controls["Telefone" + i]).Text == "")
+                {
+
+                }
+                else
+                {
+                    sqlConexao.Open();
+                    comando.ExecuteNonQuery();
+                }
+            }
+            this.tb_telefoneTableAdapter.FillByID(this.db_DPSPDataSet2.tb_telefone, Int16.Parse(txt_idCli.Text));
+            return true;
+        }
+
+        private void InicializaParams()
+        {
+            Y = 14;
+            n = 0;
+            id = 0;
+            ret_id = "";
+            panel1.Controls.Clear();
+         }
+
+        private void btnCanTel_Click(object sender, EventArgs e)
+        {
+            btnIncluiTel.Visible = true;
+            btnAtTel.Visible = false;
+            btnDelTel.Visible = false;
+            btnCanTel.Visible = false;
+            InicializaParams();
         }
 
         private void btn_sair_Click(object sender, EventArgs e)
@@ -295,11 +505,6 @@ namespace CadastroCliente
             {
                 System.Environment.Exit(1);
             }
-        }
-
-        private void cmb_campo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txt_buscaNome.Clear();
         }
     }
 

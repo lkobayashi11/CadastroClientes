@@ -35,7 +35,6 @@ namespace CadastroCliente
             this.lblNumeroCli = new System.Windows.Forms.Label();
             this.txt_cepCli = new System.Windows.Forms.MaskedTextBox();
             this.lblCepCli = new System.Windows.Forms.Label();
-            this.txt_telefoneCli = new System.Windows.Forms.MaskedTextBox();
             this.txt_ufCli = new System.Windows.Forms.TextBox();
             this.txt_cidadeCli = new System.Windows.Forms.TextBox();
             this.txt_bairroCli = new System.Windows.Forms.TextBox();
@@ -56,21 +55,29 @@ namespace CadastroCliente
             this.cidadeCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uFCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CEPCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbclienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_DPSPDataSet = new CadastroCliente.db_DPSPDataSet();
-            this.btn_findAll = new System.Windows.Forms.Button();
+            this.btnFindAll = new System.Windows.Forms.Button();
             this.btn_busca = new System.Windows.Forms.Button();
             this.txt_buscaNome = new System.Windows.Forms.TextBox();
             this.Consulta = new System.Windows.Forms.Panel();
             this.cmb_campo = new System.Windows.Forms.ComboBox();
             this.pnlInformacoes = new System.Windows.Forms.Panel();
-            this.cmb_ufCli = new System.Windows.Forms.ComboBox();
+            this.btnCanTel = new System.Windows.Forms.Button();
+            this.btnDelTel = new System.Windows.Forms.Button();
+            this.btnAtTel = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneCLIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbtelefoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_DPSPDataSet2 = new CadastroCliente.db_DPSPDataSet2();
+            this.btnIncluiTel = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tbUFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.db_DPSPDataSet11 = new CadastroCliente.db_DPSPDataSet1();
             this.txt_idCli = new System.Windows.Forms.TextBox();
             this.lblIdCli = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btn_deletar = new System.Windows.Forms.Button();
             this.btn_inserir = new System.Windows.Forms.Button();
             this.lblInformacoes = new System.Windows.Forms.Label();
@@ -85,11 +92,15 @@ namespace CadastroCliente
             this.tbclienteBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tbclienteBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tb_UFTableAdapter = new CadastroCliente.db_DPSPDataSet1TableAdapters.tb_UFTableAdapter();
+            this.tb_telefoneTableAdapter = new CadastroCliente.db_DPSPDataSet2TableAdapters.tb_telefoneTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbclienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet)).BeginInit();
             this.Consulta.SuspendLayout();
             this.pnlInformacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbtelefoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -140,16 +151,6 @@ namespace CadastroCliente
             this.lblCepCli.Size = new System.Drawing.Size(39, 18);
             this.lblCepCli.TabIndex = 14;
             this.lblCepCli.Text = "CEP";
-            // 
-            // txt_telefoneCli
-            // 
-            this.txt_telefoneCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefoneCli.Location = new System.Drawing.Point(158, 217);
-            this.txt_telefoneCli.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_telefoneCli.Mask = "(00)00000-0000";
-            this.txt_telefoneCli.Name = "txt_telefoneCli";
-            this.txt_telefoneCli.Size = new System.Drawing.Size(130, 24);
-            this.txt_telefoneCli.TabIndex = 13;
             // 
             // txt_ufCli
             // 
@@ -272,15 +273,14 @@ namespace CadastroCliente
             this.bairroCLIDataGridViewTextBoxColumn,
             this.cidadeCLIDataGridViewTextBoxColumn,
             this.uFCliDataGridViewTextBoxColumn,
-            this.CEPCliDataGridViewTextBoxColumn,
-            this.telefoneCLIDataGridViewTextBoxColumn});
+            this.CEPCliDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tbclienteBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 535);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 635);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1012, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(1012, 195);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -356,15 +356,6 @@ namespace CadastroCliente
             this.CEPCliDataGridViewTextBoxColumn.ReadOnly = true;
             this.CEPCliDataGridViewTextBoxColumn.Width = 125;
             // 
-            // telefoneCLIDataGridViewTextBoxColumn
-            // 
-            this.telefoneCLIDataGridViewTextBoxColumn.DataPropertyName = "Telefone_CLI";
-            this.telefoneCLIDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneCLIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefoneCLIDataGridViewTextBoxColumn.Name = "telefoneCLIDataGridViewTextBoxColumn";
-            this.telefoneCLIDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneCLIDataGridViewTextBoxColumn.Width = 125;
-            // 
             // tbclienteBindingSource
             // 
             this.tbclienteBindingSource.DataMember = "tb_cliente";
@@ -375,28 +366,28 @@ namespace CadastroCliente
             this.db_DPSPDataSet.DataSetName = "db_DPSPDataSet";
             this.db_DPSPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btn_findAll
+            // btnFindAll
             // 
-            this.btn_findAll.AllowDrop = true;
-            this.btn_findAll.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_findAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_findAll.Location = new System.Drawing.Point(886, 39);
-            this.btn_findAll.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_findAll.Name = "btn_findAll";
-            this.btn_findAll.Size = new System.Drawing.Size(100, 28);
-            this.btn_findAll.TabIndex = 3;
-            this.btn_findAll.Text = "Todos";
-            this.btn_findAll.UseVisualStyleBackColor = false;
-            this.btn_findAll.Click += new System.EventHandler(this.button1_Click);
+            this.btnFindAll.AllowDrop = true;
+            this.btnFindAll.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnFindAll.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFindAll.Location = new System.Drawing.Point(876, 23);
+            this.btnFindAll.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFindAll.Name = "btnFindAll";
+            this.btnFindAll.Size = new System.Drawing.Size(110, 42);
+            this.btnFindAll.TabIndex = 3;
+            this.btnFindAll.Text = "Todos";
+            this.btnFindAll.UseVisualStyleBackColor = false;
+            this.btnFindAll.Click += new System.EventHandler(this.btnFindAll_Click);
             // 
             // btn_busca
             // 
             this.btn_busca.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_busca.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_busca.Location = new System.Drawing.Point(778, 39);
+            this.btn_busca.Location = new System.Drawing.Point(768, 23);
             this.btn_busca.Margin = new System.Windows.Forms.Padding(4);
             this.btn_busca.Name = "btn_busca";
-            this.btn_busca.Size = new System.Drawing.Size(100, 28);
+            this.btn_busca.Size = new System.Drawing.Size(100, 42);
             this.btn_busca.TabIndex = 2;
             this.btn_busca.Text = "Buscar";
             this.btn_busca.UseVisualStyleBackColor = false;
@@ -414,10 +405,10 @@ namespace CadastroCliente
             // 
             this.Consulta.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Consulta.Controls.Add(this.cmb_campo);
-            this.Consulta.Controls.Add(this.btn_findAll);
+            this.Consulta.Controls.Add(this.btnFindAll);
             this.Consulta.Controls.Add(this.btn_busca);
             this.Consulta.Controls.Add(this.txt_buscaNome);
-            this.Consulta.Location = new System.Drawing.Point(39, 400);
+            this.Consulta.Location = new System.Drawing.Point(39, 518);
             this.Consulta.Name = "Consulta";
             this.Consulta.Size = new System.Drawing.Size(1012, 100);
             this.Consulta.TabIndex = 3;
@@ -439,11 +430,19 @@ namespace CadastroCliente
             // 
             // pnlInformacoes
             // 
+            this.pnlInformacoes.AutoScroll = true;
+            this.pnlInformacoes.AutoSize = true;
+            this.pnlInformacoes.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnlInformacoes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlInformacoes.Controls.Add(this.cmb_ufCli);
+            this.pnlInformacoes.Controls.Add(this.btnCanTel);
+            this.pnlInformacoes.Controls.Add(this.btnDelTel);
+            this.pnlInformacoes.Controls.Add(this.btnAtTel);
+            this.pnlInformacoes.Controls.Add(this.dataGridView2);
+            this.pnlInformacoes.Controls.Add(this.btnIncluiTel);
+            this.pnlInformacoes.Controls.Add(this.panel1);
             this.pnlInformacoes.Controls.Add(this.txt_idCli);
             this.pnlInformacoes.Controls.Add(this.lblIdCli);
-            this.pnlInformacoes.Controls.Add(this.btn_cancelar);
+            this.pnlInformacoes.Controls.Add(this.btnCancelar);
             this.pnlInformacoes.Controls.Add(this.btn_deletar);
             this.pnlInformacoes.Controls.Add(this.txt_numeroCli);
             this.pnlInformacoes.Controls.Add(this.lblNomeCli);
@@ -453,7 +452,6 @@ namespace CadastroCliente
             this.pnlInformacoes.Controls.Add(this.btn_inserir);
             this.pnlInformacoes.Controls.Add(this.lblCepCli);
             this.pnlInformacoes.Controls.Add(this.lblEnderecoCli);
-            this.pnlInformacoes.Controls.Add(this.txt_telefoneCli);
             this.pnlInformacoes.Controls.Add(this.lblTelefoneCli);
             this.pnlInformacoes.Controls.Add(this.txt_enderecoCli);
             this.pnlInformacoes.Controls.Add(this.txt_ufCli);
@@ -465,20 +463,112 @@ namespace CadastroCliente
             this.pnlInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlInformacoes.Location = new System.Drawing.Point(39, 58);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(1012, 298);
+            this.pnlInformacoes.Size = new System.Drawing.Size(1020, 432);
             this.pnlInformacoes.TabIndex = 5;
             // 
-            // cmb_ufCli
+            // btnCanTel
             // 
-            this.cmb_ufCli.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbUFBindingSource, "Nome_UF", true));
-            this.cmb_ufCli.DataSource = this.tbUFBindingSource;
-            this.cmb_ufCli.DisplayMember = "ID_UF";
-            this.cmb_ufCli.FormattingEnabled = true;
-            this.cmb_ufCli.Location = new System.Drawing.Point(793, 184);
-            this.cmb_ufCli.Name = "cmb_ufCli";
-            this.cmb_ufCli.Size = new System.Drawing.Size(121, 26);
-            this.cmb_ufCli.TabIndex = 23;
-            this.cmb_ufCli.ValueMember = "ID_UF";
+            this.btnCanTel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCanTel.Location = new System.Drawing.Point(294, 383);
+            this.btnCanTel.Name = "btnCanTel";
+            this.btnCanTel.Size = new System.Drawing.Size(91, 41);
+            this.btnCanTel.TabIndex = 29;
+            this.btnCanTel.Text = "Cancelar";
+            this.btnCanTel.UseVisualStyleBackColor = false;
+            this.btnCanTel.Click += new System.EventHandler(this.btnCanTel_Click);
+            // 
+            // btnDelTel
+            // 
+            this.btnDelTel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelTel.Location = new System.Drawing.Point(195, 382);
+            this.btnDelTel.Name = "btnDelTel";
+            this.btnDelTel.Size = new System.Drawing.Size(93, 42);
+            this.btnDelTel.TabIndex = 28;
+            this.btnDelTel.TabStop = false;
+            this.btnDelTel.Text = "Deletar Telefone";
+            this.btnDelTel.UseVisualStyleBackColor = false;
+            this.btnDelTel.Click += new System.EventHandler(this.btnDelTel_Click);
+            // 
+            // btnAtTel
+            // 
+            this.btnAtTel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtTel.Location = new System.Drawing.Point(92, 381);
+            this.btnAtTel.Name = "btnAtTel";
+            this.btnAtTel.Size = new System.Drawing.Size(97, 42);
+            this.btnAtTel.TabIndex = 27;
+            this.btnAtTel.Text = "Atualizar Telefone";
+            this.btnAtTel.UseVisualStyleBackColor = false;
+            this.btnAtTel.Click += new System.EventHandler(this.btnAtTel_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.telefoneCLIDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.tbtelefoneBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(357, 217);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(239, 123);
+            this.dataGridView2.TabIndex = 26;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID_TEL";
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 50;
+            // 
+            // telefoneCLIDataGridViewTextBoxColumn
+            // 
+            this.telefoneCLIDataGridViewTextBoxColumn.DataPropertyName = "Telefone_CLI";
+            this.telefoneCLIDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneCLIDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefoneCLIDataGridViewTextBoxColumn.Name = "telefoneCLIDataGridViewTextBoxColumn";
+            this.telefoneCLIDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneCLIDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tbtelefoneBindingSource
+            // 
+            this.tbtelefoneBindingSource.DataMember = "tb_telefone";
+            this.tbtelefoneBindingSource.DataSource = this.db_DPSPDataSet2;
+            // 
+            // db_DPSPDataSet2
+            // 
+            this.db_DPSPDataSet2.DataSetName = "db_DPSPDataSet2";
+            this.db_DPSPDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnIncluiTel
+            // 
+            this.btnIncluiTel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIncluiTel.Location = new System.Drawing.Point(170, 347);
+            this.btnIncluiTel.Name = "btnIncluiTel";
+            this.btnIncluiTel.Size = new System.Drawing.Size(154, 28);
+            this.btnIncluiTel.TabIndex = 25;
+            this.btnIncluiTel.Text = "Incluir Telefone";
+            this.btnIncluiTel.UseVisualStyleBackColor = false;
+            this.btnIncluiTel.Click += new System.EventHandler(this.btnIncluiTel_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(151, 218);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 123);
+            this.panel1.TabIndex = 24;
             // 
             // tbUFBindingSource
             // 
@@ -509,28 +599,27 @@ namespace CadastroCliente
             this.lblIdCli.TabIndex = 21;
             this.lblIdCli.Text = "Id";
             // 
-            // btn_cancelar
+            // btnCancelar
             // 
-            this.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_cancelar.Location = new System.Drawing.Point(778, 245);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(100, 29);
-            this.btn_cancelar.TabIndex = 20;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnCancelar.Location = new System.Drawing.Point(768, 376);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 44);
+            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btn_deletar
             // 
             this.btn_deletar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_deletar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_deletar.Location = new System.Drawing.Point(886, 245);
+            this.btn_deletar.Location = new System.Drawing.Point(876, 375);
             this.btn_deletar.Name = "btn_deletar";
-            this.btn_deletar.Size = new System.Drawing.Size(110, 28);
+            this.btn_deletar.Size = new System.Drawing.Size(110, 43);
             this.btn_deletar.TabIndex = 19;
             this.btn_deletar.Text = "Deletar";
-            this.btn_deletar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_deletar.UseVisualStyleBackColor = false;
             this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
             // 
@@ -538,10 +627,10 @@ namespace CadastroCliente
             // 
             this.btn_inserir.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_inserir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_inserir.Location = new System.Drawing.Point(671, 246);
+            this.btn_inserir.Location = new System.Drawing.Point(661, 377);
             this.btn_inserir.Margin = new System.Windows.Forms.Padding(4);
             this.btn_inserir.Name = "btn_inserir";
-            this.btn_inserir.Size = new System.Drawing.Size(100, 28);
+            this.btn_inserir.Size = new System.Drawing.Size(100, 44);
             this.btn_inserir.TabIndex = 12;
             this.btn_inserir.Text = "Salvar";
             this.btn_inserir.UseVisualStyleBackColor = false;
@@ -561,7 +650,7 @@ namespace CadastroCliente
             // 
             this.lblConsulta.AutoSize = true;
             this.lblConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsulta.Location = new System.Drawing.Point(63, 392);
+            this.lblConsulta.Location = new System.Drawing.Point(54, 510);
             this.lblConsulta.Name = "lblConsulta";
             this.lblConsulta.Size = new System.Drawing.Size(83, 20);
             this.lblConsulta.TabIndex = 7;
@@ -581,9 +670,9 @@ namespace CadastroCliente
             // 
             this.btn_sair.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_sair.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_sair.Location = new System.Drawing.Point(927, 726);
+            this.btn_sair.Location = new System.Drawing.Point(927, 837);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(100, 28);
+            this.btn_sair.Size = new System.Drawing.Size(100, 45);
             this.btn_sair.TabIndex = 9;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = false;
@@ -627,12 +716,16 @@ namespace CadastroCliente
             // 
             this.tb_UFTableAdapter.ClearBeforeFill = true;
             // 
+            // tb_telefoneTableAdapter
+            // 
+            this.tb_telefoneTableAdapter.ClearBeforeFill = true;
+            // 
             // Frm_CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1077, 774);
+            this.ClientSize = new System.Drawing.Size(1077, 894);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.lblConsulta);
@@ -651,6 +744,9 @@ namespace CadastroCliente
             this.Consulta.PerformLayout();
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbtelefoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbUFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_DPSPDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
@@ -668,7 +764,6 @@ namespace CadastroCliente
         #endregion
         private System.Windows.Forms.MaskedTextBox txt_cepCli;
         private System.Windows.Forms.Label lblCepCli;
-        private System.Windows.Forms.MaskedTextBox txt_telefoneCli;
         private System.Windows.Forms.TextBox txt_ufCli;
         private System.Windows.Forms.TextBox txt_cidadeCli;
         private System.Windows.Forms.TextBox txt_bairroCli;
@@ -688,23 +783,14 @@ namespace CadastroCliente
         private db_DPSPDataSetTableAdapters.tb_clienteTableAdapter tb_clienteTableAdapter;
         private System.Windows.Forms.Button btn_busca;
         private System.Windows.Forms.TextBox txt_buscaNome;
-        private System.Windows.Forms.Button btn_findAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bairroCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeCLIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uFCliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEPCliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnFindAll;
         private System.Windows.Forms.Panel Consulta;
         private System.Windows.Forms.Panel pnlInformacoes;
         private System.Windows.Forms.Button btn_deletar;
         private System.Windows.Forms.Label lblInformacoes;
         private System.Windows.Forms.Button btn_inserir;
         private System.Windows.Forms.Label lblConsulta;
-        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txt_idCli;
         private System.Windows.Forms.Label lblIdCli;
         private System.Windows.Forms.PictureBox logo;
@@ -716,10 +802,28 @@ namespace CadastroCliente
         private System.Windows.Forms.BindingSource dbDPSPDataSet1BindingSource1;
         private System.Windows.Forms.BindingSource tbclienteBindingSource2;
         private System.Windows.Forms.BindingSource tbclienteBindingSource3;
-        private System.Windows.Forms.ComboBox cmb_ufCli;
         private db_DPSPDataSet1 db_DPSPDataSet11;
         private System.Windows.Forms.BindingSource tbUFBindingSource;
         private db_DPSPDataSet1TableAdapters.tb_UFTableAdapter tb_UFTableAdapter;
+        private System.Windows.Forms.Button btnIncluiTel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairroCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeCLIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uFCliDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEPCliDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private db_DPSPDataSet2 db_DPSPDataSet2;
+        private System.Windows.Forms.BindingSource tbtelefoneBindingSource;
+        private db_DPSPDataSet2TableAdapters.tb_telefoneTableAdapter tb_telefoneTableAdapter;
+        private System.Windows.Forms.Button btnDelTel;
+        private System.Windows.Forms.Button btnAtTel;
+        private System.Windows.Forms.Button btnCanTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneCLIDataGridViewTextBoxColumn;
     }
 }
 
